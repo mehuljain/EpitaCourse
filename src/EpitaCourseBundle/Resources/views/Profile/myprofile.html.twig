@@ -1,0 +1,18 @@
+{% extends "EpitaCourseBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content  %}
+    <div style="text-align: center" class="row">
+    <h1>My Profile</h1>
+    <p>Name: {{ user.firstname }}&nbsp;{{ user.lastname }}</p>
+    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+    <div style="text-align: center" class="col-sm-offset-5 col-sm-2 btn-sm btn-primary">
+        <a  style="color: white; text-decoration: none" href="{{ path('fos_user_profile_edit') }}">Edit MyProfile</a>
+    </div>
+    <br><br>
+    <div style="text-align: center" class="col-sm-offset-5 col-sm-2 btn-sm btn-primary">
+        <a style="text-decoration: none; color: white" href="{{ path('fos_user_profile_show') }}">Home Page</a>
+    </div>
+{% endblock %}

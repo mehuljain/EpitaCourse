@@ -1,0 +1,46 @@
+{% extends "EpitaCourseBundle::layout.html.twig" %}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+
+{% block content %}
+    <style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+</head>
+<body>                      
+    <div style="width:650px;height:200px;border:1px solid #000;">
+        <br>
+    <table>
+        <tr>
+            <th>Course Name</th>
+            <th>Course Code</th>
+            <th>ECTS</th>
+            <th>Nb of Hours</th>
+            <th>Teaching Unit</th>
+            <th>Action1</th>
+            <th>Action2</th>
+        </tr>  
+        {% for course in courses %}
+            <tr>
+                <td>{{ course.coursename }}</td>
+                <td>{{ course.coursecode }}</td>
+                <td>{{ course.ectscredits }}</td>
+                <td>{{ course.atthours }}</td>
+                <td>{{ course.teachingunit }}</td>
+                <td><a class="btn-link" style="text-decoration: none" href="{{ path('edit_course', {'id': course.id }) }}">Edit</a></td>
+                <!--<td><a class="btn-link" style="text-decoration: none" href="{#{{ path('delete_course', {'id': course.id }) }}#}">Delete</a></td>-->
+            </tr>
+        {% endfor %}
+    </table>
+    <div style="width:100px; float:left;"><br>
+        <div class="btn-sm btn-primary"><a style="text-decoration: none; color: white" href="{{ path('add_course') }}">Add Course</a></div>
+    </div><br><div style="width:100px; float:left;">
+       <div class="btn-sm btn-primary"><a style="text-decoration: none; color: white" href="{{ path('fos_user_profile_show') }}">Home Page</a></div>      
+        </div>
+{% endblock content %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/css/mystyle.css') }}" />
+{% endblock %}

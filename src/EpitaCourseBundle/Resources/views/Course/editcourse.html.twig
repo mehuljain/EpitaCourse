@@ -1,0 +1,97 @@
+{% extends "EpitaCourseBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content %}
+    <div class="container">
+        <h3>Edit Course</h3>
+    </div>
+    <br>
+    <div class="container">
+        {{ form_start(form) }}
+            <div class="row">
+            <div class="col-md-2">{{ form_label(form.coursename) }}</div>
+            <div class="col-md-2">{{ form_widget(form.coursename) }}</div>
+            <div class="col-md-4">{{ form_errors(form.coursename) }}</div>
+            </div>
+            <br>
+            <div class="row">
+            <div class="col-md-2">{{ form_label(form.teachingunit) }}</div>
+            <div class="col-md-2">{{ form_widget(form.teachingunit) }}</div>
+            <div class="col-md-4">{{ form_errors(form.teachingunit) }}</div>
+            </div>
+            <br>
+            <div class="row">
+            <div class="col-md-2">{{ form_label(form.coursecode) }}</div>
+            <div class="col-md-2">{{ form_widget(form.coursecode) }}</div>
+            <div class="col-md-4">{{ form_errors(form.coursecode) }}</div>
+            </div>
+            <br>
+            <div class="row">
+            <div class="col-md-2">{{ form_label(form.ectscredits) }}</div>
+            <div class="col-md-2">{{ form_widget(form.ectscredits) }}</div>
+            <div class="col-md-4">{{ form_errors(form.ectscredits) }}</div>
+            </div>
+            <br>
+            <div class="row">
+            <div class="col-md-2">{{ form_label(form.atthours) }}</div>
+            <div class="col-md-2">{{ form_widget(form.atthours) }}</div>
+            <div class="col-md-4">{{ form_errors(form.atthours) }}</div>
+            </div>
+            <br>
+            <div class="row">
+            <div class="col-md-2">{{ form_label(form.program) }}</div>
+            <div class="col-md-2">{{ form_widget(form.program) }}</div>
+            <div class="col-md-4">{{ form_errors(form.program) }}</div>
+            </div>
+            <br>
+            <div class="row">
+            <div class="col-md-2">{{ form_label(form.specialization) }}</div>
+            <div class="col-md-2">{{ form_widget(form.specialization) }}</div>
+            <div class="col-md-4">{{ form_errors(form.specialization) }}</div>
+            </div>
+            <br>
+            <div class="row">
+            <div class="col-md-2">{{ form_label(form.prerequistes) }}</div>
+            <div class="col-md-2">{{ form_widget(form.prerequistes) }}</div>
+            <div class="col-md-4">{{ form_errors(form.prerequistes) }}</div>
+            </div>
+            <br>
+            <div class="row">
+            <div class="col-md-2">{{ form_label(form.learningoutcomes) }}</div>
+            <div class="col-md-2">{{ form_widget(form.learningoutcomes) }}</div>
+            <div class="col-md-4">{{ form_errors(form.learningoutcomes) }}</div>
+            </div>
+            <br>
+            <div class="row">
+            <div class="col-md-2">{{ form_label(form.courseoverview) }}</div>
+            <div class="col-md-2">{{ form_widget(form.courseoverview) }}</div>
+            <div class="col-md-4">{{ form_errors(form.courseoverview) }}</div>
+            </div>
+            <br>
+            <div class="row">
+            <div class="col-md-2">{{ form_label(form.listoftopics) }}</div>
+            <div class="col-md-2">{{ form_widget(form.listoftopics) }}</div>
+            <div class="col-md-4">{{ form_errors(form.listoftopics) }}</div>
+            </div>
+            <br>
+            <div class="row">
+            <div class="col-md-2">{{ form_label(form.assessmentscheme) }}</div>
+            <div class="col-md-2">{{ form_widget(form.assessmentscheme) }}</div>
+            <div class="col-md-4">{{ form_errors(form.assessmentscheme) }}</div>
+            </div>
+            <br>
+            <div class="row">
+            <div class="col-md-2">{{ form_label(form.recommendedresources) }}</div>
+            <div class="col-md-2">{{ form_widget(form.recommendedresources) }}</div>
+            <div class="col-md-4">{{ form_errors(form.recommendedresources) }}</div>
+            </div>
+            <br>
+            <div class="row">
+            <div class="col-md-2 col-md-offset-2">
+                <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+            </div>
+            </div>        
+        {{ form_end(form) }}
+    </div>
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% extends 'EpitaCourseBundle::layout.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content %}
+    <div class="container">
+        <h3>Register Profile</h3>
+    </div>
+    <div class="container">
+        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+        <div class="row">
+            <div class="col-md-2">{{ form_label(form.salutation) }}</div>
+            <div class="col-md-2">{{ form_widget(form.salutation) }}</div>
+            <div class="col-md-4">{{ form_errors(form.salutation) }}</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-2">{{ form_label(form.firstname) }}</div>
+            <div class="col-md-2">{{ form_widget(form.firstname) }}</div>
+            <div class="col-md-4">{{ form_errors(form.firstname) }}</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-2">{{ form_label(form.lastname) }}</div>
+            <div class="col-md-2">{{ form_widget(form.lastname) }}</div>
+            <div class="col-md-4">{{ form_errors(form.lastname) }}</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-2">{{ form_label(form.email) }}</div>
+            <div class="col-md-2">{{ form_widget(form.email) }}</div>
+            <div class="col-md-4">{{ form_errors(form.email) }}</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-2">{{ form_label(form.username) }}</div>
+            <div class="col-md-2">{{ form_widget(form.username) }}</div>
+            <div class="col-md-4">{{ form_errors(form.username) }}</div>
+        </div>
+        <br>
+        <div class="row">
+{#            <div class="col-md-2">{{ form_label(form.plainPassword) }}</div>#}
+            <div class="col-md-offset-2 col-md-2">{{ form_widget(form.plainPassword) }}</div>
+            <div class="col-md-4">{{ form_errors(form.plainPassword) }}</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-2">
+                <input type="submit" value="Submit" />
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "EpitaCourseBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content  %}
+    <div style="margin-top: 30px;" class="fos_user_user_show">
+        <div style="text-align: center" class="col-lg-4 col-lg-offset-4">
+             <h3>Welcome {{ user.firstname }}&nbsp;{{ user.lastname }}</h3>
+        </div>
+        <div style="text-align: center" class="col-lg-4 col-lg-offset-4 btn-sm btn-primary">
+            <a style="color: white; text-decoration: none" href="{{ path('my_profile') }}">View MyProfile</a>
+        </div>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        <div style="text-align: center" class="col-lg-4 col-lg-offset-4 btn-sm btn-primary">
+            <a style="color: white; text-decoration: none" href="{{ path('my_courses') }}">View MyCourses</a>
+        </div>
+        </br>
+        </br>
+        <div style="text-align: center" class="col-lg-4 col-lg-offset-4 btn-sm btn-primary">
+            <a style="color: white; text-decoration: none" href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        </div>
+    </div>
+{% endblock content  %}
