@@ -9,17 +9,17 @@ table, th, td {
 </style>
 </head>
 <body>                      
-    <div style="width:650px;height:200px;border:1px solid #000;">
+    <div style="width:650px;height:300px;border:1px solid #000;">
         <br>
     <table>
         <tr>
             <th>Course Name</th>
             <th>Course Code</th>
             <th>ECTS</th>
-            <th>Nb of Hours</th>
+            <th>Number of Hours</th>
             <th>Teaching Unit</th>
             <th>Action1</th>
-            <th>Action2</th>
+{#            <th>Action2</th>#}
         </tr>  
         {% for course in courses %}
             <tr>
@@ -32,12 +32,16 @@ table, th, td {
                 <!--<td><a class="btn-link" style="text-decoration: none" href="{#{{ path('delete_course', {'id': course.id }) }}#}">Delete</a></td>-->
             </tr>
         {% endfor %}
-    </table>
-    <div style="width:100px; float:left;"><br>
-        <div class="btn-sm btn-primary"><a style="text-decoration: none; color: white" href="{{ path('add_course') }}">Add Course</a></div>
-    </div><br><div style="width:100px; float:left;">
+    </table>    
+    <br>
+    <div style="width:100px; float:left;">
        <div class="btn-sm btn-primary"><a style="text-decoration: none; color: white" href="{{ path('fos_user_profile_show') }}">Home Page</a></div>      
-        </div>
+    </div>
+    <br><br>
+    <div style="width:100px;float: left"><br>
+        <div class="btn-sm btn-primary"><a style="text-decoration: none; color: white" href="{{ path('add_course') }}">Add Course</a></div>
+    </div>
+    
 {% endblock content %}
 
 {% block stylesheets %}

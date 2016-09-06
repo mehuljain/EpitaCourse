@@ -3,10 +3,11 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block content %}
+
     <div class="container">
         <h3>Edit Profile</h3>
     </div>
-    <div class="container">    
+    <div class="container">
         {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
         <div class="row">
             <div class="col-md-2">{{ form_label(form.salutation) }}</div>
@@ -54,6 +55,16 @@
             <div class="col-md-2 col-md-offset-2">
                 <a href="{{ path('fos_user_change_password') }}">Change-Password</a>
             </div>
+        </div>
+        <br><br>
+         <div style="text-align: center" class="col-sm-offset-5 col-sm-2 btn-sm btn-primary">
+            <a style="text-decoration: none; color: white" href="{{ path('fos_user_profile_show') }}">Home Page</a>
+        </div>
+
+        <br><br>
+        <div style="text-align: center" class="col-sm-offset-5 col-sm-2 btn-sm btn-primary">
+            <a style="color: white; text-decoration: none" href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
         </div>
         {{ form_end(form) }}
     </div>

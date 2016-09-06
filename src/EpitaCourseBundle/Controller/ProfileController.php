@@ -167,7 +167,7 @@ class ProfileController extends BaseController {
 
         $selectedcourse = $em->getRepository('EpitaCourseBundle:Course')->findOneBy(array('id' => $id));
 
-        $form = $this->createForm(CourseType::class, $selectedcourse);
+        $form = $this->createForm(CourseType::class, $selectedcourse,array('trait_choices' => array($selectedcourse,$em)));
 
         $form->handleRequest($request);
 
@@ -188,6 +188,7 @@ class ProfileController extends BaseController {
 
         return $this->render('EpitaCourseBundle:Course:editcourse.html.twig', array(
                     'form' => $form->createView(),
+                    
         ));
     }
 

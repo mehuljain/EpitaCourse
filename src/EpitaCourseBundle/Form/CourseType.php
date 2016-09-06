@@ -6,26 +6,19 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-//use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CourseType extends AbstractType {
     
     public function buildForm(FormBuilderInterface $builder, array $options) {
     
-//        $this->selectedcourse = $options['trait_choices'];
+        $this->selectedcourse = $options['trait_choices'][0];
+        $em = $options['trait_choices'][1];
+        $programId = $this->selectedcourse->getProgram();        
+        $program = $em->getRepository('EpitaCourseBundle:Program')->findOneBy(array('id' => $programId));
         
-//        $this->programrepository = $options['program_repository'];
-//        $this->specializationrepository = $options['specialization_repository'];
-//        
-//        $programId = $this->selectedcourse->getProgram();
-//        $program = $this->programrepository->findOneBy(array('id' => $programId));
-//        
-//        $specializationId = $this->selectedcourse->getSpecialization();
-//        $specialization = $this->specializationrepository->findOneBy(array('id' => $specializationId));
-//        var_dump($this->selectedcourse->getProgram());
-        
-//        exit;
+        $specializationId = $this->selectedcourse->getSpecialization();
+        $specialization = $em->getRepository('EpitaCourseBundle:Specialization')->findOneBy(array('id' => $specializationId));
                     
         $builder->add('coursename', 'text', array(
 //                    'data' => $this->selectedcourse->getcoursename(),
@@ -52,7 +45,7 @@ class CourseType extends AbstractType {
                     'expanded' => false,
                     'multiple' => false,
                     'label' => 'Choose Program',
-//                    'data' => $this->selectedcourse->getProgram(),
+                    'data' => $program,
                 ))
                 ->add('specialization', 'entity', array(
                     'class' => 'EpitaCourseBundle:Specialization',
@@ -64,7 +57,7 @@ class CourseType extends AbstractType {
                     'expanded' => false,
                     'multiple' => false,
                     'label' => 'Choose Specialization',
-//                    'data' => $specialization,
+                    'data' => $specialization,
                 ))
                 ->add('prerequistes', TextareaType::class, array(
 //                    'trim' => true,
@@ -96,7 +89,7 @@ class CourseType extends AbstractType {
     public function configureOptions(OptionsResolver $resolver) {
         $resolver->setDefaults(array(
             'data_class' => 'EpitaCourseBundle\Entity\Course',
-//            'trait_choices' => null,
+            'trait_choices' => null,
         ));
     }
 

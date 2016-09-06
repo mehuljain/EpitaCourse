@@ -4,9 +4,10 @@
 
 {% block meta %}
     <meta charset="UTF-8" />
+    
 {% endblock %}
 {% block body %}
-    {% block content %}
+      {% block content %}
         <div>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
@@ -33,7 +34,7 @@
     
     {% block footer %}
         <div style="margin: 50px 10px 50px 10px;" class="row footer">
-            <footer style="text-align: center" class="col-lg-12">copyright &copy; 2016 TraceByte</footer>
+            <footer style="text-align: center" class="col-lg-12">copyright &copy; 2016 EPITA</footer>
         </div>
     {% endblock footer %}
 {% endblock %}
