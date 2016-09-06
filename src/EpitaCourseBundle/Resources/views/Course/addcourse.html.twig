@@ -10,6 +10,10 @@
     <div class="container">
         {{ form_start(form) }}
             <div class="row">
+                <style>                   
+                       input {width:150%;}
+                       textarea {width:200%;}                   
+                </style>
             <div class="col-md-2">{{ form_label(form.coursename) }}</div>
             <div class="col-md-2">{{ form_widget(form.coursename) }}</div>
             <div class="col-md-4">{{ form_errors(form.coursename) }}</div>
@@ -52,6 +56,7 @@
             </div>
             <br>
             <div class="row">
+         
             <div class="col-md-2">{{ form_label(form.prerequistes) }}</div>
             <div class="col-md-2">{{ form_widget(form.prerequistes) }}</div>
             <div class="col-md-4">{{ form_errors(form.prerequistes) }}</div>
@@ -89,9 +94,10 @@
             <br>
             <div class="row">
             <div class="col-md-2 col-md-offset-2">
-                <input type="submit" value="Add" />
+                <input type="submit" value="Add" id="submit"/>
+                <style> input#submit{width:100px}</style>
             </div>
-            </div>        
+            </div>       
         {{ form_end(form) }}
     </div>
 {% endblock content %}

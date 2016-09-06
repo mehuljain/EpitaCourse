@@ -14,11 +14,14 @@ class CourseType extends AbstractType {
     
         $this->selectedcourse = $options['trait_choices'][0];
         $em = $options['trait_choices'][1];
+        $program = $specialization = '';
+        if(!empty($this->selectedcourse)){
         $programId = $this->selectedcourse->getProgram();        
         $program = $em->getRepository('EpitaCourseBundle:Program')->findOneBy(array('id' => $programId));
         
         $specializationId = $this->selectedcourse->getSpecialization();
         $specialization = $em->getRepository('EpitaCourseBundle:Specialization')->findOneBy(array('id' => $specializationId));
+        }
                     
         $builder->add('coursename', 'text', array(
 //                    'data' => $this->selectedcourse->getcoursename(),
