@@ -10,8 +10,12 @@
     <div class="container">
         {{ form_start(form) }}
             <div class="row">
+                 <style>                   
+                       input {width:150%;}
+                       textarea {width:200%;}                   
+                </style>
             <div  class="col-md-2">{{ form_label(form.coursename) }}</div>
-            <div  class="col-md-4" style="width:300px">{{ form_widget(form.coursename) }}</div>
+            <div  class="col-md-4">{{ form_widget(form.coursename) }}</div>
             <div class="col-md-4">{{ form_errors(form.coursename) }}</div>
             </div>
             <br>

@@ -75,9 +75,9 @@ sonata_block:
         # Your other blocks
         
 sonata_admin:
-    title:      EPITA Course Bundle
-    title_logo: bundles/epitacourse/images/logo.png
-
+    title:      EPITA Course
+    title_logo: bundles/epitacourse/img/logo.png
+    
 #FOSUserBundle Configuration
 fos_user:
     db_driver: orm
