@@ -3,8 +3,18 @@
 {% trans_default_domain 'FOSUserBundle' %}
 {% block content %}
     <div class="container">
-        <title>{% block title %}Login Page{% endblock %}</title>
-    <h4>Please enter login details</h4>
+        <style>
+    .row{
+  display: flex;
+  align-items: center;
+  margin:auto;
+  justify-content: center;
+}
+</style>
+        <center>  <img src="{{ asset('bundles/epitacourse/img/logo.png') }}" /></div>
+        </img>
+        <title>{% block title %}Login Page{% endblock %}</title></center>
+        <center> <h4>Please enter login details</h4></center>
     </div>
     <div class="container">
         {% if error %}

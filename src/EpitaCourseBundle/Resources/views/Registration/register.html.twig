@@ -3,12 +3,25 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block content %}
+    <style>
+    .row{
+  display: flex;
+  align-items: center;
+  margin:auto;
+  justify-content: center;
+}
+</style>
     <div class="container">
+        <img src="{{ asset('bundles/epitacourse/img/logo.png') }}" /></div>
+        </img>
         <title>{% block title %}Registration Form{% endblock %}</title>
-        <h3>Registration Form</h3>
     </div>
     <div class="container">
         {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+         <div class="col-md-2 col-md-offset-2"> 
+             <h3> Registration&nbsp;Form </h3>
+         </div>
+         <br><br><br><br>
         <div class="row">
             <div class="col-md-2">{{ form_label(form.salutation) }}</div>
             <div class="col-md-2">{{ form_widget(form.salutation) }}</div>
@@ -45,10 +58,10 @@
             <div class="col-md-4">{{ form_errors(form.plainPassword) }}</div>
         </div>
         <br>
+        <br>
         <div class="row">
-            <div class="col-md-2 col-md-offset-2">
-                <input type="submit" value="Submit" />
-            </div>
+            <div class="col-md-2"> <input type="submit" value="Submit" /></div>
+            <div class="col-md-2"></div>
         </div>
         {{ form_end(form) }}
     </div>

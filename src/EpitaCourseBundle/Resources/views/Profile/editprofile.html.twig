@@ -3,13 +3,27 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block content %}
-
+ <style>
+    .row{
+  display: flex;
+  align-items: center;
+  margin:auto;
+  justify-content: center;
+}
+</style>
     <div class="container">
+        <img src="{{ asset('bundles/epitacourse/img/logo.png') }}" /></div>
+         </img>
         <title>{% block title %}Edit Profile{% endblock %}</title>
-        <h3>Edit Profile</h3>
     </div>
     <div class="container">
         {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+        <div class="col-md-2 col-md-offset-2"> <h3>  Edit Profile </h3></div><br>
+        
+        <h4> <a style="text-decoration: none;" href="{{ path('fos_user_profile_show') }}">Home Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="col-md-2"> 
+                <div class="col-md-2">   </div><a href="{{ path('fos_user_security_logout') }}"></div>
+                 {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></h4>
+        <br><br>
         <div class="row">
             <div class="col-md-2">{{ form_label(form.salutation) }}</div>
             <div class="col-md-2">{{ form_widget(form.salutation) }}</div>
@@ -47,26 +61,14 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-md-2 col-md-offset-2">
-                <input type="submit" value="Update" />
+            <div class="col-md-2"><input type="submit" value="Update" /></div>
+            <div class="col-md-2"></div>
             </div>
-        </div>
-        <br><br>
+        <br> 
         <div class="row">
-            <div class="col-md-2 col-md-offset-2">
-                <a href="{{ path('fos_user_change_password') }}">Change-Password</a>
+            <div class="col-md-2"><a href="{{ path('fos_user_change_password') }}">Change-Password</a></div>
+            <div class="col-md-2"></div>
             </div>
-        </div>
-        <br><br>
-         <div style="text-align: center" class="col-sm-offset-5 col-sm-2 btn-sm btn-primary">
-            <a style="text-decoration: none; color: white" href="{{ path('fos_user_profile_show') }}">Home Page</a>
-        </div>
-
-        <br><br>
-        <div style="text-align: center" class="col-sm-offset-5 col-sm-2 btn-sm btn-primary">
-            <a style="color: white; text-decoration: none" href="{{ path('fos_user_security_logout') }}">
-                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-        </div>
         {{ form_end(form) }}
     </div>
 {% endblock content %}

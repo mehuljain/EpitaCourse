@@ -1,16 +1,25 @@
 {% extends "EpitaCourseBundle::layout.html.twig" %}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 
 {% block content %}
-    <style>
+<style>
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-}               
+}   
 </style>
+ <img src="{{ asset('bundles/epitacourse/img/logo.png') }}" />
+</img>
  <title>{% block title %}Show Course{% endblock %}</title>
 </head>
-<body>                      
-    <div style="width:650px;height:300px;border:1px solid #000;">
+<body><div align='center'>                      
+         <style>                   
+         input {width:150%;}
+         textarea {width:200%;min-height: 163px;}                   
+        </style>
+         <br>
+        <h4><a style="text-decoration: none;" href="{{ path('fos_user_profile_show') }}">Home Page</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a style="text-decoration: none;" href="{{ path('add_course') }}">Add Course</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ path('fos_user_security_logout') }}">
+                 {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></h4>
         <br>
     <table>
         <tr>
@@ -34,19 +43,7 @@ table, th, td {
             </tr>
         {% endfor %}
     </table>    
-    <br>
-    <div style="width:100px; float:left;">
-        <style>                   
-         input {width:150%;}
-         textarea {width:200%;}                   
-        </style>
-       <div class="btn-sm btn-primary"><a style="text-decoration: none; color: white" href="{{ path('fos_user_profile_show') }}">Home Page</a></div>      
-    </div>
-    <br><br>
-    <div style="width:100px;float: left"><br>
-        <div class="btn-sm btn-primary"><a style="text-decoration: none; color: white" href="{{ path('add_course') }}">Add Course</a></div>
-    </div>
-    
+            </div>
 {% endblock content %}
 
 {% block stylesheets %}

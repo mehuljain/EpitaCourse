@@ -3,17 +3,29 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block content %}
+    <style>
+    .row{
+  display: flex;
+  align-items: center;
+  margin:auto;
+  justify-content: center;
+}
+</style>
     <div class="container">
+         <img src="{{ asset('bundles/epitacourse/img/logo.png') }}" /></div>
+         </img>
          <title>{% block title %}Add Course{% endblock %}</title>
-        <h3>Add Course</h3>
-    </div>
     <br>
     <div class="container">
         {{ form_start(form) }}
+        <div class="col-md-2 col-md-offset-2"> <h3>  Add Course </h3></div><br>
+        <div class="col-md-2"> </div>  <div class="col-md-2"> <h4><a href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</h4></a></div>
+         <br><br><br>
             <div class="row">
                 <style>                   
                        input {width:150%;}
-                       textarea {width:200%;}                   
+                       textarea {width:200%;min-height: 163px;}                   
                 </style>
             <div class="col-md-2">{{ form_label(form.coursename) }}</div>
             <div class="col-md-2">{{ form_widget(form.coursename) }}</div>
@@ -93,12 +105,12 @@
             <div class="col-md-4">{{ form_errors(form.recommendedresources) }}</div>
             </div>
             <br>
-            <div class="row">
-            <div class="col-md-2 col-md-offset-2">
-                <input type="submit" value="Add" id="submit"/>
-                <style> input#submit{width:100px}</style>
-            </div>
-            </div>       
+            
+        <div class="row">
+            <div class="col-md-2"> <input type="submit" value="Add" id="submit"/>
+                <style> input#submit{width:100px}</style></div>
+                <div class="col-md-2"></div>
+        </div>
         {{ form_end(form) }}
     </div>
 {% endblock content %}
