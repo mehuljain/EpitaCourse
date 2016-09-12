@@ -1,0 +1,33 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block content %}
+    <title>{% block title %}Reset Password{% endblock %}</title>
+<div align="center">
+    <div class="container">
+        <img src="{{ asset('bundles/epitacourse/img/logo.png') }}" /></div>
+        </img><br>
+<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+    <div>
+        
+        {% if invalid_username is defined %}
+            <p>{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</p>
+        {% endif %}
+        <label for="username">{{ 'resetting.request.username'|trans }}&nbsp;&nbsp;&nbsp;</label><br>
+        
+        <input type="text" id="username" name="username" required="required" />
+    </div><br>
+    <div>
+        <input type="submit" value="{{ 'resetting.request.submit'|trans }}" />
+    </div><br>
+<div>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+        </div>
+</div>
+</form>
+{% endblock %}

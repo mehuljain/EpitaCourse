@@ -19,9 +19,11 @@
     <div class="container">
         {{ form_start(form) }}
         <div class="col-md-2 col-md-offset-2"> <h3>  Add Course </h3></div><br>
-        <div class="col-md-2"> </div>  <div class="col-md-2"> <h4><a href="{{ path('fos_user_security_logout') }}">
-            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</h4></a></div>
-         <br><br><br>
+        
+        <h4> <a style="text-decoration: none;" href="{{ path('fos_user_profile_show') }}">Home Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="col-md-2"> 
+                <div class="col-md-2">   </div><a href="{{ path('fos_user_security_logout') }}"></div>
+                 {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></h4>
+        <br>
             <div class="row">
                 <style>                   
                        input {width:150%;}

@@ -15,7 +15,6 @@
         <img src="{{ asset('bundles/epitacourse/img/logo.png') }}" /></div>
         </img>
         <title>{% block title %}Registration Form{% endblock %}</title>
-    </div>
     <div class="container">
         {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
          <div class="col-md-2 col-md-offset-2"> 
