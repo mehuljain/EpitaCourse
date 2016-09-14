@@ -80,6 +80,9 @@ sonata_admin:
     
 #FOSUserBundle Configuration
 fos_user:
+    from_email:
+        address:        international.admissions@epitacrm.fr
+        sender_name:    EPITA INTERNATIONAL
     db_driver: orm
     firewall_name: main
     user_class: EpitaCourseBundle\Entity\Instructor

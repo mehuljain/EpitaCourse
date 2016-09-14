@@ -29,7 +29,8 @@ class CourseAdmin extends Admin
             ->add('courseoverview','textarea', array('label' => 'courseoverview'))
             ->add('listoftopics','textarea', array('label' => 'listoftopics'))
             ->add('assessmentscheme','textarea', array('label' => 'assessmentscheme'))      
-            ->add('recommendedresources','textarea', array('label' => 'recommendedresources'))       
+            ->add('recommendedresources','textarea', array('label' => 'recommendedresources'))
+            ->add('instructors','entity',array('class' => 'EpitaCourseBundle\Entity\Instructor'))
         ;
     }
 
