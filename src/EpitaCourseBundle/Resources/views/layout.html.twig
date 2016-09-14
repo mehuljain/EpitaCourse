@@ -10,7 +10,6 @@
       {% block content %}
                <img src="{{ asset('bundles/epitacourse/img/logo.png') }}" />
                </img>
-        <title>{% block title %}Change Password{% endblock %}</title>
         <div>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |

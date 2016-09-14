@@ -1,5 +1,5 @@
 {% extends "EpitaCourseBundle::layout.html.twig" %}
-
+{% form_theme form 'EpitaCourseBundle:Form:form_detail_div_layout.html.twig' %}
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block content %}
@@ -74,37 +74,41 @@
             <br>
             <div class="row">
             <div class="col-md-2">{{ form_label(form.prerequistes) }}</div>
-            <div class="col-md-2">{{ form_widget(form.prerequistes) }}</div>
+            <div class="col-md-2">{{ form_widget(form.prerequistes,{  'help' : 'Put NA if this field is not applicable' } ) }}</div>
             <div class="col-md-4">{{ form_errors(form.prerequistes) }}</div>
             </div>
             <br>
             <div class="row">
             <div class="col-md-2">{{ form_label(form.learningoutcomes) }}</div>
-            <div class="col-md-2">{{ form_widget(form.learningoutcomes) }}</div>
+            <div class="col-md-2">{{ form_widget(form.learningoutcomes,{'help':'List 4-5 broad statements of what you hope students will know, be able to do, or have experienced as a result
+            of taking the course. Upon completion of this course, students should be able to:'}) }}</div>
             <div class="col-md-4">{{ form_errors(form.learningoutcomes) }}</div>
             </div>
             <br>
             <div class="row">
             <div class="col-md-2">{{ form_label(form.courseoverview) }}</div>
-            <div class="col-md-2">{{ form_widget(form.courseoverview) }}</div>
+            <div class="col-md-2">{{ form_widget(form.courseoverview,{'help':'Explain concisely what the course is about and provide a holistic view of your course'}) }}</div>
             <div class="col-md-4">{{ form_errors(form.courseoverview) }}</div>
             </div>
             <br>
             <div class="row">
             <div class="col-md-2">{{ form_label(form.listoftopics) }}</div>
-            <div class="col-md-2">{{ form_widget(form.listoftopics) }}</div>
+            <div class="col-md-2">{{ form_widget(form.listoftopics,{'help':'Highlight the fundamental concepts involved in each topic in order to help
+            students better understand what is and what is not covered in the course'}) }}</div>
             <div class="col-md-4">{{ form_errors(form.listoftopics) }}</div>
             </div>
             <br>
             <div class="row">
             <div class="col-md-2">{{ form_label(form.assessmentscheme) }}</div>
-            <div class="col-md-2">{{ form_widget(form.assessmentscheme) }}</div>
+            <div class="col-md-2">{{ form_widget(form.assessmentscheme,{'help':'Provide a breakdown of internal assessment and final exam (if there is one). Indicate the main components, what they will test, and their weighting or percentage worth. For example: 1. Class attendance and participation [xx %], 
+            2. Group Project and Presentation [xx %], 
+            3. Assignments [xx %], 4. Project [xx %], 5. Final Exam [xx %], …'}) }}</div>
             <div class="col-md-4">{{ form_errors(form.assessmentscheme) }}</div>
             </div>
             <br>
             <div class="row">
             <div class="col-md-2">{{ form_label(form.recommendedresources) }}</div>
-            <div class="col-md-2">{{ form_widget(form.recommendedresources) }}</div>
+            <div class="col-md-2">{{ form_widget(form.recommendedresources,{'help':'References, online resources, e-books, papers'}) }}</div>
             <div class="col-md-4">{{ form_errors(form.recommendedresources) }}</div>
             </div>
             <br>
