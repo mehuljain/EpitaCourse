@@ -7,12 +7,14 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class CourseAdmin extends Admin
 {
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)
     {
+
         $formMapper  
             ->add('coursename', 'text', array('label' => 'Course Name'))
             ->add('teachingunit', 'text', array('label' => 'Teaching Unit'))
@@ -30,7 +32,8 @@ class CourseAdmin extends Admin
             ->add('listoftopics','textarea', array('label' => 'listoftopics'))
             ->add('assessmentscheme','textarea', array('label' => 'assessmentscheme'))      
             ->add('recommendedresources','textarea', array('label' => 'recommendedresources'))
-            ->add('instructors','entity',array('class' => 'EpitaCourseBundle\Entity\Instructor'))
+//            ->add('instructors','sonata_type_model',array('multiple'=> true,'property'=>'username'))
+            ->add('instructors', null, array('label' => 'Instructors', 'expanded' => false, 'by_reference' => false, 'multiple' => true))
         ;
     }
 
