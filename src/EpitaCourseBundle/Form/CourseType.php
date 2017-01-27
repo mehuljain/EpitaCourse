@@ -24,7 +24,7 @@ class CourseType extends AbstractType {
         }
                     
         $builder->add('coursename', 'text', array(
-                        'label' => 'Course Name/Nom du cours'
+                        'label' => 'Course Name'
 //                    'data' => $this->selectedcourse->getcoursename(),
                 ))
                 ->add('teachingunit', 'text', array(
@@ -32,7 +32,7 @@ class CourseType extends AbstractType {
 //                    'data' => $this->selectedcourse->getTeachingunit(),
                 ))
                 ->add('coursecode', 'text', array(
-                    'label' => 'Course Code/Code de cours'
+                    'label' => 'Course Code'
 //                    'data' => $this->selectedcourse->getCoursecode(),
                 ))
                 ->add('ectscredits', 'text', array(
@@ -40,7 +40,7 @@ class CourseType extends AbstractType {
 //                    'data' => $this->selectedcourse->getEctscredits(),
                 ))
                 ->add('atthours', 'text', array(
-                        'label' => 'Attributed Hours/Heures attribuées'
+                        'label' => 'Attributed Hours'
 //                    'data' => $this->selectedcourse->getAtthours(),
                 ))
                 ->add('program', 'entity', array(
@@ -53,7 +53,7 @@ class CourseType extends AbstractType {
                     'choice_label' => 'programname',
                     'expanded' => false,
                     'multiple' => false,
-                    'label' => 'Choose Program/Choisir Programme',
+                    'label' => 'Choose Program',
                     'data' => $program,
                 ))
                 ->add('specialization', 'entity', array(
@@ -65,36 +65,36 @@ class CourseType extends AbstractType {
                     'choice_label' => 'specializationname',
                     'expanded' => false,
                     'multiple' => false,
-                    'label' => 'Choose Specialization/Choisir Spécialisation',
+                    'label' => 'Choose Specialization',
                     'data' => $specialization,
                 ))
                 ->add('prerequistes', TextareaType::class, array(
-                       'label' => 'Prerequisites/Prerequis'
+                       'label' => 'Prerequisites'
 //                    'trim' => true,
 //                    'data' => $this->selectedcourse->getPrerequistes(),
                 ))
                 ->add('learningoutcomes', TextareaType::class, array(
-                       'label' => 'Learning outcomes/Cours Objectif'
+                       'label' => 'Learning outcomes'
 //                    'trim' => true,
 //                    'data' => $this->selectedcourse->getLearningoutcomes(),
                 ))
                 ->add('courseoverview', TextareaType::class, array(
-                       'label' => 'Course Overview/Aperçu du cours'
+                       'label' => 'Course Overview'
 //                    'trim' => true,
 //                    'data' => $this->selectedcourse->getCourseoverview(),
                 ))
                 ->add('listoftopics', TextareaType::class, array(
-                       'label' => 'List of topics/La liste du topics'
+                       'label' => 'List of topics'
 //                    'trim' => true,
 //                    'data' => $this->selectedcourse->getListoftopics(),
                 ))
                 ->add('assessmentscheme', TextareaType::class, array(
-                        'label' => 'Asessment Scheme/Système d\'évaluation'
+                        'label' => 'Asessment Scheme'
 //                    'trim' => true,
 //                    'data' => $this->selectedcourse->getAssessmentscheme(),
                 ))
                 ->add('recommendedresources', TextareaType::class, array(
-                      'label' => 'Recommended Courses/Ressources recommandées'
+                      'label' => 'Recommended Courses'
 //                    'trim' => true,
 //                    'data' => $this->selectedcourse->getRecommendedresources(),
                 ));
