@@ -10,17 +10,17 @@ use EpitaCourseBundle\Entity\Program;
 class LoadProgramData extends AbstractFixture implements OrderedFixtureInterface {
 
     public function load(ObjectManager $manager) {
-//        $program = ['ME','MSc','ME and MSc' ];
-//
-//        for ($i = 0; $i < count($program); $i++) {
-//            $programAdmin = new Program();
-//            $programAdmin->setProgramname($program[$i]);
-//
-//            $manager->persist($programAdmin);
-//            $manager->flush();
-//
-//            $this->addReference('admin-program'.$i, $programAdmin);
-//        }
+        $program = ['ME','MSc','ME and MSc' ];
+
+        for ($i = 0; $i < count($program); $i++) {
+            $programAdmin = new Program();
+            $programAdmin->setProgramname($program[$i]);
+
+            $manager->persist($programAdmin);
+            $manager->flush();
+
+            $this->addReference('admin-program'.$i, $programAdmin);
+        }
     }
 
     public function getOrder() {
