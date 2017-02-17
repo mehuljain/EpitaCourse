@@ -13,7 +13,7 @@ use EpitaCourseBundle\Entity\Course;
 class LoadCourseData extends AbstractFixture implements OrderedFixtureInterface,ContainerAwareInterface {
     
     /**
-     * @var ContainerInterface
+     * @var ContainerInterfac
      */
     private $container;
 
@@ -128,7 +128,7 @@ http://www.gisdevelopment.net/tutorials/tuman003.htmEA40",
         $specialization = $em->getRepository('EpitaCourseBundle:Specialization')->findOneBy(array('id'=> 12));
         $specialization = ["4","3","4"];
         $um = $this->container->get('fos_user.user_manager');
-        $instructor = $um->findUserByUsername('rembowskijan');
+        $instructor = $um->findUserByUsername('utkarsh2k2');
 //        $coursename = ['Network Security', 'Digital Risks and Network Architecture','Data Flow and Computer Networks'];
 //        $teachingunit = ['Advanced Security', 'Technical Skills','Networks and System Harmonization'];
 //        $coursecode = ['NET_523_NSEC', 'INF_466_DRNA','INF_467_DFCN'];
