@@ -9,6 +9,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
+
 class CourseAdmin extends Admin
 {
     // Fields to be shown on create/edit forms
@@ -55,6 +56,27 @@ class CourseAdmin extends Admin
             ->addIdentifier('coursecode')
             ->addIdentifier('teachingunit')  
         ;
+    }
+    
+    public function getExportFields() {
+        
+          return array(
+            'Coursename' => 'coursename',      
+            'Teaching Unit' => 'teachingunit',
+            'Course Code' => 'coursecode',
+            'ECTS Credits' => 'ectscredits',
+            'Program' => 'program',
+            'Specialization' => 'specialization',
+            'Pre-requisites'=> 'prerequistes',
+            'Learning Outcomes' => 'learningoutcomes',
+            'Course Overview' => 'courseoverview',
+            'List of Topics' => 'listoftopics',
+            'Assessment Scheme' => 'assessmentscheme',
+            'Recommended Courses'=> 'recommendedresources',
+            'Instructor Firstname'=> 'getExportInstructorFirstName',
+            'Instructor Lastname'=> 'getExportInstructorLastName',
+            'Instructor Email'=> 'getExportInstructorEmail',
+        );
     }
 }
 

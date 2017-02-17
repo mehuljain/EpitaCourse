@@ -474,4 +474,38 @@ class Course {
     {
         return $this->recommendedresources;
     }
+    
+    
+    /**
+     * Get instructors first name
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getExportInstructorFirstName()
+    {
+        $firstname = $this->instructors->map(function ($entity){return $entity->getFirstname();})->current();                
+        return $firstname;
+    }
+    
+    /**
+     * Get instructors last name
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getExportInstructorLastName()
+    {
+        $lastname = $this->instructors->map(function ($entity){return $entity->getLastname();})->current();
+        return $lastname;
+    }
+    
+    /**
+     * Get instructors email
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getExportInstructorEmail()
+    {
+        $email = $this->instructors->map(function ($entity){return $entity->getEmailCanonical();})->current();
+        return $email;
+    }
 }
