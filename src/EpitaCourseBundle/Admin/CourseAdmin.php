@@ -20,19 +20,21 @@ class CourseAdmin extends Admin
             ->add('coursename', 'text', array('label' => 'Course Name'))
             ->add('teachingunit', 'text', array('label' => 'Teaching Unit'))
             ->add('coursecode', 'text', array('label' => 'Course Code'))
-            ->add('ectscredits','text', array('label' => 'ectscredits'))    
+            ->add('ectscredits','text', array('label' => 'ECTS Credits'))    
             ->add('atthours', 'text', array('label' => 'Hours'))
             ->add('program', ChoiceType::class, array(
                'choices'  => array('ME','MSc','ME and MSc',)))
             ->add('specialization', ChoiceType::class, array(
                'choices'  => array('FUND','FUND_HARMO','GITM','GITM_ISM','GITM_SDM_SNS','HARMO',
-                   'ISM_SE_CS','SDM','SDM_SE','SE','SNS','SNS_CSCS_SNS')))       
-            ->add('prerequistes','textarea', array('label' => 'prerequistes'))
-            ->add('learningoutcomes','textarea', array('label' => 'learningoutcomes')) 
-            ->add('courseoverview','textarea', array('label' => 'courseoverview'))
-            ->add('listoftopics','textarea', array('label' => 'listoftopics'))
-            ->add('assessmentscheme','textarea', array('label' => 'assessmentscheme'))      
-            ->add('recommendedresources','textarea', array('label' => 'recommendedresources'))
+                   'ISM_SE_CS','SDM','SDM_SE','SE','SNS','SNS_CSCS_SNS','ISM',
+                   'CS','ISM_CS_SE_SDM_SNS_GITM','ISM_SE',
+                   'CS_SNS','GITM_SDM','SDM_SNS','SE_CS','SE_CS_SNS_SDM','GITM_ISM_SE_SDM')))       
+            ->add('prerequistes','textarea', array('label' => 'Pre-requisites'))
+            ->add('learningoutcomes','textarea', array('label' => 'Learning Outcomes')) 
+            ->add('courseoverview','textarea', array('label' => 'Course Overview'))
+            ->add('listoftopics','textarea', array('label' => 'List of topics'))
+            ->add('assessmentscheme','textarea', array('label' => 'Assessment scheme'))      
+            ->add('recommendedresources','textarea', array('label' => 'Recommended resources'))
 //            ->add('instructors','sonata_type_model',array('multiple'=> true,'property'=>'username'))
             ->add('instructors', null, array('label' => 'Instructors', 'expanded' => false, 'by_reference' => false, 'multiple' => true))
         ;
