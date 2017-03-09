@@ -5,11 +5,19 @@ namespace EpitaCourseBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
+
 /**
  * @ORM\Entity
  * @ORM\Table(name="course")
  */
 class Course {
+    
+    public static $specia = array(1=>"FUND",2=>"FUND_HARMO",3=>"GITM",4=>"GITM_ISM",5=>"GITM_SDM_SNS",
+        6=>"HARMO",7=>"ISM_SE_CS",8=>"SDM",9=>"SDM_SE",10=>"SE",11=>"SNS",12=>"SNS_CSCS_SNS",13=>"ISM",
+        14=>"CS",15=>"ISM_CS_SE_SDM_SNS_GITM",16=>"ISM_SE",17=>"CS_SNS",18=>"GITM_SDM",19=>"SDM_SNS",
+        20=>"SE_CS",21=>"SE_CS_SNS_SDM",22=>"GITM_ISM_SE_SDM"
+        );
+    public static $prog = array(0=> 'None',1=>"ME",2=>"MSc",3=>"ME and MSc");
 
     /**
      * @ORM\Id
@@ -72,7 +80,7 @@ class Course {
     /**
      * @var integer
      * 
-     * @ORM\Column(name="specialization", type="integer") 
+     * @ORM\Column(name="specialization", type="string") 
      */
     protected $specialization;
 
@@ -295,6 +303,28 @@ class Course {
     public function getSpecialization()
     {
         return $this->specialization;
+    }
+    
+    /**
+     * 
+     * @return string Speicalization string
+     */
+   public function getSpecializationstring(){
+
+     $spe = $this->specialization;
+     $test = self::$specia[$spe];
+        return $test;
+    }
+    
+    /**
+     * 
+     * @return string Speicalization string
+     */
+   public function getProgramname(){
+
+     $spe = $this->program;
+     $test = self::$prog[$spe];
+        return $test;
     }
 
     /**
